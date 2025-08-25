@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abiha, I'm Sorry 💖</title>
+  <meta name="description" content="A fancy, cute, animated apology website for Abiha — with photos, promises, and sweet effects."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <!-- Background layers -->
+  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+  <div id="petals" aria-hidden="true"></div>
+
+  <!-- Scroll progress heart -->
+  <div class="progress-wrap" aria-hidden="true">
+    <svg class="progress-heart" viewBox="0 0 100 90">
+      <path id="heartPath" d="M50 84 C20 64 4 48 4 29 C4 17 14 6 27 6 C36 6 44 11 50 18 C56 11 64 6 73 6 C86 6 96 17 96 29 C96 48 80 64 50 84 Z"/>
+    </svg>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="glass-card">
+      <h1 class="glow-text">Abiha, I'm Sorry</h1>
+      <p class="subtitle">This page is just for you, my love.</p>
+      <button id="scrollBtn" class="btn primary">Scroll for my Heart 💕</button>
+    </div>
+    <!-- tiny easter egg button -->
+    <button id="easterHeart" class="easter-heart" title="A tiny surprise">❤</button>
+  </header>
+
+  <!-- LETTER -->
+  <section class="section" id="letter">
+    <h2 class="section-title">My Letter to You 💌</h2>
+    <div class="letter typewriter" id="letterBox"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="memories">
+    <h2 class="section-title">My Sweet Memories `📸</h2>
+    <div class="gallery">
+      <figure class="photo">
+        <img src="assets/img/pic2.jpg" alt="Abiha smiling"/>
+        <figcaption>My queen, your brightest smile 🌸</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/img/pic1.jpg" alt="Abiha outdoors"/>
+        <figcaption>Sunlight loves you like I do ✨</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/img/pic3.jpg" alt="Candid of Abiha"/>
+        <figcaption>Every candid = my favorite view 💖</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/img/pic4.jpg" alt="A memory together"/>
+        <figcaption>My safest place 🤍</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROMISES -->
+  <section class="section" id="promises">
+    <h2 class="section-title">My Promises to You 🌹</h2>
+    <ul class="promise-list" id="promiseList">
+      <li>I'll always listen to you 💕</li>
+      <li>I'll never let pride come between us 🌸</li>
+      <li>I'll make time for us, every week ⏰</li>
+      <li>I'll speak softly, even when stressed 🕊️</li>
+      <li>I'll keep learning how to love you better 📚</li>
+      <li>I choose you, every single day 💍</li>
+    </ul>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final" id="final">
+    <h2 class="final-text">Abiha, will you forgive me? 💖</h2>
+    <div class="cta">
+      <button id="yesBtn" class="btn success">Yes, I forgive you 💕</button>
+      <a class="btn outline" href="https://wa.me/" target="_blank" rel="noopener">Talk to me on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img id="lightboxImg" alt="Expanded memory"/>
+    <p id="lightboxCap"></p>
+  </div>
+
+  <!-- Libs -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

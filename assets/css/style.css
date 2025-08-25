@@ -1,0 +1,84 @@
+:root{
+  --rose:#F4B6C2; --blush:#FADADD; --cream:#FFF8F3; --plum:#2C1B2B; --gold:#E7D8C9;
+}
+*{box-sizing:border-box}
+html,body{margin:0; padding:0}
+body{
+  font-family:'Poppins',sans-serif; color:var(--plum);
+  background: radial-gradient(1200px 800px at 10% 10%, rgba(255,248,243,.9), transparent 60%),
+              radial-gradient(1000px 700px at 90% 20%, rgba(244,182,194,.6), transparent 60%),
+              linear-gradient(135deg,var(--blush),var(--rose));
+  overflow-x:hidden;
+}
+
+/* Background layers */
+#particlesCanvas{position:fixed; inset:0; z-index:-2}
+#petals{position:fixed; inset:0; pointer-events:none; z-index:-1}
+
+/* Progress heart */
+.progress-wrap{position:fixed; top:18px; right:18px; width:48px; height:48px; opacity:.9}
+.progress-heart path{fill:none; stroke:var(--plum); stroke-width:5; stroke-linejoin:round; stroke-linecap:round; opacity:.25}
+.progress-heart path.progress{stroke:var(--rose); opacity:1}
+
+/* Hero */
+.hero{min-height:100vh; display:grid; place-items:center; position:relative; padding:32px}
+.glass-card{
+  backdrop-filter: blur(12px); background: rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.45); border-radius:28px; padding:40px; text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.15)
+}
+.glow-text{
+  font-family:'Playfair Display',serif; font-size: clamp(2.2rem,5vw,4rem); color:var(--plum);
+  text-shadow:0 0 15px rgba(231,216,201,.6)
+}
+.subtitle{opacity:.85; margin:.5rem 0 1.5rem}
+.btn{cursor:pointer; border:none; border-radius:999px; padding:12px 22px; font-weight:600; transition:transform .15s ease, box-shadow .2s}
+.btn:hover{transform: translateY(-2px)}
+.btn:active{transform: translateY(0)}
+.primary{background:var(--gold)}
+.outline{background:transparent; border:2px solid var(--gold)}
+.success{background:#c8f7c5}
+.easter-heart{position:absolute; bottom:30px; right:30px; background:transparent; border:none; font-size:24px; opacity:.55}
+.easter-heart:hover{opacity:1; transform:scale(1.15)}
+
+/* Sections */
+.section{padding:72px 20px; max-width:1100px; margin:0 auto}
+.section-title{font-family:'Playfair Display',serif; text-align:center; font-size: clamp(1.6rem,3vw,2.4rem)}
+
+/* Letter */
+.letter{
+  max-width:860px; margin:24px auto; background: rgba(255,255,255,.65); border:1px solid rgba(255,255,255,.5);
+  border-radius:20px; padding:24px 28px; line-height:1.8; box-shadow:0 12px 30px rgba(0,0,0,.1)
+}
+.typewriter{border-left:3px solid var(--plum)}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:24px}
+.photo{background:rgba(255,255,255,.7); border-radius:20px; padding:10px; box-shadow:0 8px 24px rgba(0,0,0,.08); transform-style:preserve-3d; transition:transform .25s ease; cursor:pointer}
+.photo:hover{transform: perspective(800px) rotateX(4deg) rotateY(-4deg)}
+.photo img{width:100%; height:280px; object-fit:cover; border-radius:14px}
+.photo figcaption{text-align:center; margin-top:8px; font-size:.95rem; opacity:.85}
+
+/* Promises */
+.promise-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-top:18px; padding:0}
+.promise-list li{list-style:none; background:white; border-radius:16px; padding:14px 16px; border:2px solid transparent; cursor:pointer; position:relative; transition: all .2s}
+.promise-list li::before{content:'❤'; position:absolute; left:12px; top:12px; opacity:.35}
+.promise-list li:hover{box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.promise-list li.checked{border-color:var(--rose); background:linear-gradient(180deg,rgba(250,218,221,.5),rgba(231,216,201,.35))}
+.promise-list li.checked::after{content:'✨'; position:absolute; right:12px; bottom:8px}
+
+/* Final */
+.final{background: radial-gradient(600px 400px at 80% 10%, rgba(255,255,255,.5), transparent 60%), #fff5fb; border-radius:28px; text-align:center}
+.final-text{animation: heartbeat 2s infinite}
+@keyframes heartbeat{0%{transform:scale(1)} 25%{transform:scale(1.03)} 50%{transform:scale(1)} 75%{transform:scale(1.05)} 100%{transform:scale(1)}}
+.cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px}
+
+/* Lightbox */
+.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; padding:20px; z-index:50}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw; max-height:70vh; border-radius:14px; box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox p{color:#fff; margin-top:10px; text-align:center}
+.lightbox-close{position:absolute; top:20px; right:24px; background:rgba(255,255,255,.85); border:none; border-radius:50%; width:40px; height:40px; font-size:22px; cursor:pointer}
+
+/* Cursor heart trail */
+.cursor-heart{position:fixed; pointer-events:none; font-size:14px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));}
